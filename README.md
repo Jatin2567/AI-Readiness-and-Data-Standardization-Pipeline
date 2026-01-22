@@ -53,7 +53,7 @@ The output consists of **AI-ready data files plus governance artefacts** that su
 ---
 
 ## Architecture Overview
-
+```txt
 ┌───────────────────────────────────────────┐
 │               Input Layer                 │
 │  Public Tabular Datasets (CSV / XLSX)     │
@@ -104,7 +104,7 @@ The output consists of **AI-ready data files plus governance artefacts** that su
 │  Standardised data (CSV), metadata and    │
 │  quality flags (JSON), and reports (MD).  │
 └───────────────────────────────────────────┘
-
+```
 Each stage has a single responsibility and produces explicit output artefacts.  
 The pipeline does not assume predefined schemas, perform semantic inference, or modify raw data.
 
@@ -113,7 +113,7 @@ The pipeline does not assume predefined schemas, perform semantic inference, or 
 ## Output Artefacts
 
 For each input dataset (table), the pipeline generates the following artefacts:
-
+```txt
 ┌───────────────────────────────────────────┐
 │        Standardised Data Outputs          │
 │  • CSV files with consistent schema       │
@@ -154,7 +154,7 @@ For each input dataset (table), the pipeline generates the following artefacts:
 │   ├── reports/                            │
 │   └── dataset_report.md                   │
 └───────────────────────────────────────────┘
-
+```
 - **Standardised data**: Machine-consistent CSV suitable for AI pipelines  
 - **Metadata**: Machine-readable description of structure, coverage, readiness, and limitations  
 - **Quality flags**: Column-level data quality indicators  
@@ -167,7 +167,7 @@ For each input dataset (table), the pipeline generates the following artefacts:
 
 All pipeline behavior is controlled through YAML configuration files.  
 No code changes are required for policy-level adjustments.
-
+```txt
 ┌───────────────────────────────────────────┐
 │            Configuration Model            │
 │  All pipeline behavior is controlled via  │
@@ -215,3 +215,4 @@ No code changes are required for policy-level adjustments.
 │  • Auditable policy changes               │
 │  • Safe reuse across domains              │
 └───────────────────────────────────────────┘
+```
